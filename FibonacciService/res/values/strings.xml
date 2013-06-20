@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Fibonacci Native</string>
+	<string name="app_name">Fibonacci Service</string>
+    <string name="fibonacci_permissions">Fibonacci Permissions</string>
+	<string name="fibonacci_permission_normal">Fibonacci Access</string>
+    <string name="fibonacci_permission_normal_desc">Permission to use the fibonacci service</string>
+    <string name="fibonacci_permission_slow">Slow Fibonacci Access</string>
+    <string name="fibonacci_permission_slow_desc">Permission to compute large fibonacci numbers</string>
 </resources>

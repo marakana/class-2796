@@ -1,11 +1,19 @@
 package com.marakana.android.fibonacciservice;
 
+import android.content.Context;
+
 import com.marakana.android.fibonaccicommon.FibonacciRequest;
 import com.marakana.android.fibonaccicommon.FibonacciResponse;
 import com.marakana.android.fibonaccicommon.IFibonacciService;
 import com.marakana.android.fibonaccinative.FibLib;
 
 public class IFibonacciServiceImpl extends IFibonacciService.Stub {
+    private final Context context;
+
+    public IFibonacciServiceImpl(Context context) {
+        super();
+        this.context = context;
+    }
 
     @Override
     public FibonacciResponse fib(FibonacciRequest req) {
@@ -31,21 +39,29 @@ public class IFibonacciServiceImpl extends IFibonacciService.Stub {
 
     @Override
     public long fibJI(long n) {
-        return FibLib.fibJI(n);
+        return FibLib.fibJI(checkN(n, 7));
     }
 
     @Override
     public long fibJR(long n) {
-        return FibLib.fibJR(n);
+        return FibLib.fibJR(checkN(n, 4));
     }
 
     @Override
     public long fibNI(long n) {
-        return FibLib.fibNI(n);
+        return FibLib.fibNI(checkN(n, 13));
     }
 
     @Override
     public long fibNR(long n) {
-        return FibLib.fibNR(n);
+        return FibLib.fibNR(checkN(n, 9));
+    }
+
+    private long checkN(long n, int max) {
+        if (n > max) {
+            this.context.enforceCallingOrSelfPermission(
+                    Manifest.permission.USE_SLOW_FIBONACCI_SERVICE, "Just beat it!");
+        }
+        return n;
     }
 }

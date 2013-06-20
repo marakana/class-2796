@@ -32,7 +32,7 @@ public class FibonacciService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        service = new IFibonacciServiceImpl();
+        service = new IFibonacciServiceImpl(this);
     }
 
     @Override

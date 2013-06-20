@@ -4,6 +4,23 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <permission-group
+        android:name="com.marakana.android.fibonacciservice.FIBONACCI_PERMISSIONS"
+        android:label="@string/fibonacci_permissions" />
+
+    <permission
+        android:name="com.marakana.android.fibonacciservice.USE_FIBONACCI_SERVICE"
+        android:description="@string/fibonacci_permission_normal_desc"
+        android:label="@string/fibonacci_permission_normal"
+        android:permissionGroup="com.marakana.android.fibonacciservice.FIBONACCI_PERMISSIONS"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.marakana.android.fibonacciservice.USE_SLOW_FIBONACCI_SERVICE"
+        android:description="@string/fibonacci_permission_slow_desc"
+        android:label="@string/fibonacci_permission_slow"
+        android:permissionGroup="com.marakana.android.fibonacciservice.FIBONACCI_PERMISSIONS"
+        android:protectionLevel="dangerous" />
+
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="17" />
@@ -12,7 +29,9 @@
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
-        <service android:name=".FibonacciService" >
+        <service
+            android:name=".FibonacciService"
+            android:permission="com.marakana.android.fibonacciservice.USE_FIBONACCI_SERVICE" >
             <intent-filter>
                 <action android:name="com.marakana.android.fibonacciservice" />
             </intent-filter>

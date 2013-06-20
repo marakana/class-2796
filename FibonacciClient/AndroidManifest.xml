@@ -7,6 +7,8 @@
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="17" />
+    <uses-permission android:name="com.marakana.android.fibonacciservice.USE_FIBONACCI_SERVICE" />
+    <uses-permission android:name="com.marakana.android.fibonacciservice.USE_SLOW_FIBONACCI_SERVICE" />
 
     <application
         android:allowBackup="false"

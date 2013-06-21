@@ -36,6 +36,6 @@
                 <action android:name="com.marakana.android.fibonacciservice" />
             </intent-filter>
         </service>
-    </application>
+     </application>
 
 </manifest>

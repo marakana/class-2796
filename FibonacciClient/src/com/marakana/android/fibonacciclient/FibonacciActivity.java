@@ -130,4 +130,9 @@ public class FibonacciActivity extends Activity
         service = null;
         button.setEnabled(false);
     }
+
+    void foo() {
+        new Intent(this, FibonacciActivity.class); //explicit
+        new Intent("do.some.thing"); //implicit
+    }
 }

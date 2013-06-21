@@ -61,6 +61,7 @@ public class IFibonacciServiceImpl extends IFibonacciService.Stub {
         if (n > max) {
             this.context.enforceCallingOrSelfPermission(
                     Manifest.permission.USE_SLOW_FIBONACCI_SERVICE, "Just beat it!");
+                    //"android.permissions.BRCK", "Can't Brick");
         }
         return n;
     }
